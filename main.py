@@ -1,5 +1,5 @@
 from menu import menu, menu_edicao
-from functions import adicionar_contato, ver_contatos, editar_contato, modificar_favorito, ver_favoritos
+from functions import adicionar_contato, ver_contatos, editar_contato, modificar_favorito, ver_favoritos, deletar_contato
 
 condicao = True
 contatos = []
@@ -13,10 +13,10 @@ while condicao:
         telefone = input("Digite o email do contato: ")
         adicionar_contato(contatos, nome, email, telefone)
         
-    if escolha == "2":
+    elif escolha == "2":
         ver_contatos(contatos)
 
-    if escolha == "3":
+    elif escolha == "3":
         ver_contatos(contatos)
         
         indice = input("\nEscolha o número do contato para editar: ")
@@ -40,7 +40,7 @@ while condicao:
                     editar_contato(contatos, indice_ajustado, "email", novo_email)
                 elif escolha_edicao == "4":
                     condicao_edicao = False
-    if escolha == "4":
+    elif escolha == "4":
         ver_contatos(contatos)
         indice = input("\nEscolha um contato para marcar/desmarcar como favorito: ")
         try:
@@ -50,7 +50,18 @@ while condicao:
         else:
             modificar_favorito(contatos, indice_ajustado)
 
-    if escolha == "5":
+    elif escolha == "5":
         ver_favoritos(contatos)
-    if escolha == "7":
+    
+    elif escolha == "6":
+        ver_contatos(contatos)
+        indice = input("Digite o número do contato que deseja deletar: ")
+        try:
+            indice_ajustado = int(indice)
+        except Exception as e:
+            print(e)
+        else:
+            deletar_contato(contatos, indice_ajustado)
+           
+    elif escolha == "7":
         condicao = False

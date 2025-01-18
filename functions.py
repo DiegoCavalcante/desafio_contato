@@ -22,6 +22,7 @@ def modificar_favorito(lista, indice):
     indice_ajustado = indice - 1
     if indice_ajustado >= 0 and indice_ajustado < len(lista):
         lista[indice_ajustado]["favorito"] = not lista[indice_ajustado]["favorito"]
+        print("Contato atualizado com sucesso!")
     return
 
 def ver_favoritos(lista):
@@ -31,3 +32,9 @@ def ver_favoritos(lista):
             status = "favorito" if contato["favorito"] else ""
             print(f"{index}. Nome: {contato['nome']}; Telefone: {contato['telefone']}; email: {contato['email']}; {status}")        
     return
+
+def deletar_contato(lista, indice):
+    indice_ajustado = indice - 1
+    if indice_ajustado >= 0 and indice_ajustado < len(lista):
+        lista.pop(indice_ajustado)
+        print("Contato removido com sucesso!")
