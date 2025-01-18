@@ -23,3 +23,11 @@ def modificar_favorito(lista, indice):
     if indice_ajustado >= 0 and indice_ajustado < len(lista):
         lista[indice_ajustado]["favorito"] = not lista[indice_ajustado]["favorito"]
     return
+
+def ver_favoritos(lista):
+    print("\nLista de Favoritos:")
+    for index, contato in enumerate(lista, start=1):
+        if contato["favorito"]:
+            status = "favorito" if contato["favorito"] else ""
+            print(f"{index}. Nome: {contato['nome']}; Telefone: {contato['telefone']}; email: {contato['email']}; {status}")        
+    return

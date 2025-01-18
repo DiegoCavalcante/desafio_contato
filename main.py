@@ -1,5 +1,5 @@
 from menu import menu, menu_edicao
-from functions import adicionar_contato, ver_contatos, editar_contato, modificar_favorito
+from functions import adicionar_contato, ver_contatos, editar_contato, modificar_favorito, ver_favoritos
 
 condicao = True
 contatos = []
@@ -50,5 +50,7 @@ while condicao:
         else:
             modificar_favorito(contatos, indice_ajustado)
 
+    if escolha == "5":
+        ver_favoritos(contatos)
     if escolha == "7":
         condicao = False
