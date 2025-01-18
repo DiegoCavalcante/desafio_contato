@@ -1,4 +1,5 @@
 def menu():
+    print("\nMenu Contatos")
     print("1. Adicionar um contato")
     print("2. Lista de contatos")
     print("3. Editar contato")
